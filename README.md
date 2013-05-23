@@ -1,6 +1,6 @@
-# CannonApp #
+# Verold Dungeon Generator #
 
-A plugin for Verold API to generator dungeon maps.
+A plugin for Verold API to generate dungeon maps.
 
 # Development #
 
