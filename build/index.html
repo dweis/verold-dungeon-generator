@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dungeon Generator Demo</title>
+  <style>
+  body {
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+  }
+  body, html, canvas {
+    width:100%;
+    height:100%;
+  }
+  #render-target-container {
+    width: 100%;
+    height: 100%;
+  }
+  </style>
+</head>
+<body>
+  <div id="render-target-container"></div>
+  <script type="text/javascript" src="http://assets.verold.com/verold_api/verold_api_v1.0.4.js"></script>
+  <script type="text/javascript" src="http://assets.verold.com/verold_api/lib/OrbitControls.js"></script>
+  <script type="text/javascript" src="./dungeon_generator.js"></script>
+  <script type="text/javascript">
+  var TestApp = VAPI.VeroldApp.extend({
+    defaultSceneLoaded: function (scene) {
+      this.camera = new THREE.PerspectiveCamera(70, this.getAspect(), 0.1, 10000);
+      this.camera.up.set(0, 1, 0);
+      this.camera.position.set(0, 0.1, 2);
+
+      this.camera.lookAt(new THREE.Vector3());
+
+      this.veroldEngine.setActiveCamera(this.camera);
+
+      this.controls = new THREE.OrbitControls(this.camera, this.getRenderer().domElement);
+      this.controls.userPanSpeed = 0.1;
+
+      this.map = new DungeonGenerator(scene, { mapWidth: 10, mapHeight: 10 });
+      this.map.create();
+    },
+
+    update: function(delta) {
+      this.controls.update();
+    }
+  });
+
+  var testApp = new TestApp({
+    el: '#render-target-container',
+    projectId: '519e2a50103d1c0200000219',
+    engineOptions: {
+      handleInput: true
+    }
+  });
+
+  testApp.run();
+  </script>
+</body>
+</html>

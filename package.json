@@ -1,0 +1,20 @@
+{
+  "name": "cannonapp",
+  "version": "0.0.1",
+  "author": {
+    "name": "Derrick Weis",
+    "email": "derrick@derrickweis.com",
+    "url": "http://derrickweis.com"
+  },
+  "private": false,
+  "dependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-livereload": "~0.1.2",
+    "grunt-regarde": "~0.1.1",
+    "grunt-contrib-jshint": "~0.4.3",
+    "grunt-contrib-requirejs": "~0.4.0"
+  },
+  "devDependencies": {
+    "grunt-contrib-connect": "~0.3.0"
+  }
+}
