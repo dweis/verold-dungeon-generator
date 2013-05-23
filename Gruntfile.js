@@ -22,6 +22,8 @@ module.exports = function(grunt) {
           inlineText: true,
 
           paths: {
+            'underscore': 'vendor/underscore',
+            'dungcarv': 'vendor/dungCarv'
           },
 
           shim: {
@@ -45,6 +47,8 @@ module.exports = function(grunt) {
           inlineText: true,
 
           paths: {
+            'underscore': 'vendor/underscore',
+            'dungcarv': 'vendor/dungCarv'
           },
 
           shim: {
