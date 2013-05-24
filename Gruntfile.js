@@ -23,7 +23,8 @@ module.exports = function(grunt) {
 
           paths: {
             'underscore': 'vendor/underscore',
-            'dungcarv': 'vendor/dungCarv'
+            'dungcarv': 'vendor/dungCarv',
+            'async': 'vendor/async'
           },
 
           shim: {
@@ -48,7 +49,8 @@ module.exports = function(grunt) {
 
           paths: {
             'underscore': 'vendor/underscore',
-            'dungcarv': 'vendor/dungCarv'
+            'dungcarv': 'vendor/dungCarv',
+            'async': 'vendor/async'
           },
 
           shim: {

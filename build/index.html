@@ -37,7 +37,7 @@
       this.controls = new THREE.OrbitControls(this.camera, this.getRenderer().domElement);
       this.controls.userPanSpeed = 0.1;
 
-      this.map = new DungeonGenerator(scene, { mapWidth: 10, mapHeight: 10 });
+      this.map = new DungeonGenerator(scene, { mapWidth: 25, mapHeight: 25 });
       this.map.create();
     },
 
