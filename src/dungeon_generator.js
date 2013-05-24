@@ -24,7 +24,7 @@ define([ 'underscore', 'async', './map', './tile' ], function(_, async, Map, Til
     this.opts.mapHeight= this.opts.mapHeight || 20;
   };
 
-  DungeonGenerator.prototype.create = function() {
+  DungeonGenerator.prototype.create = function(fn) {
     var that = this,
         EntityModel = this.scene.veroldEngine.assetRegistry.entityCollection.model;
 
@@ -39,6 +39,10 @@ define([ 'underscore', 'async', './map', './tile' ], function(_, async, Map, Til
     }, function() {
       that.generate();
       that.createMapObject();
+
+      if (_.isFunction(fn)) {
+        fn(that.mapObject);
+      }
     });
   };
 

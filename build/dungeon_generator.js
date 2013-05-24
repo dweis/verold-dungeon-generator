@@ -3707,7 +3707,7 @@ define('dungeon_generator',[ 'underscore', 'async', './map', './tile' ], functio
     this.opts.mapHeight= this.opts.mapHeight || 20;
   };
 
-  DungeonGenerator.prototype.create = function() {
+  DungeonGenerator.prototype.create = function(fn) {
     var that = this,
         EntityModel = this.scene.veroldEngine.assetRegistry.entityCollection.model;
 
@@ -3722,6 +3722,10 @@ define('dungeon_generator',[ 'underscore', 'async', './map', './tile' ], functio
     }, function() {
       that.generate();
       that.createMapObject();
+
+      if (_.isFunction(fn)) {
+        fn(that.mapObject);
+      }
     });
   };
 
